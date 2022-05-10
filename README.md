@@ -10,3 +10,5 @@ Basic React Js Application with Docker
 - Dependencies Caching
 - Docker Compose
 - Multiple Containers
+- Multiple Docker Files
+- Automatic changes from Local to Container (Volumes)
