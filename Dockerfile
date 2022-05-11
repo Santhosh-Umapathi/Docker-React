@@ -20,5 +20,5 @@ RUN npm run build
 #------------------------------------
 ## Base Image
 FROM nginx
-## Copy the build folder from above state
+## Copy the build folder from above phase
 COPY --from=builder /app/build /usr/share/nginx/html

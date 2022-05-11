@@ -6,12 +6,10 @@ Basic React Js Application with Docker
 
 ## Features
 
-- Working Directory
-- Dependencies Caching
-- Docker Compose
-- Multiple Containers
-- Mutiple State Dockerfile
-- Multiple Docker Files
-- Automatic changes from Local to Container (Volumes)
-- nginX Server for Production
+- Docker Compose - Dev, Prod
+- Docker File - Dev, Prod
 - CI/CD - Travis CI
+- AWS - Beanstalk Hosting for Single Container
+- nginX Server for Production
+- Multiple - Stages, Containers
+- Automatic changes from Local to Container (Volumes)

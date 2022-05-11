@@ -16,8 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:dev": "docker-compose up",
-    "rebuild:dev": "docker-compose up --build",
+    "build:dev": "docker-compose -f docker-compose-dev.yml up",
+    "rebuild:dev": "docker-compose -f docker-compose-dev.yml up --build",
     "build:prod": "docker build -t appymango/docker-react .",
     "run:prod": "docker run -p 8080:80 appymango/docker-react"
   },
