@@ -6,13 +6,14 @@ Basic React Js Application with Docker
 
 # Live
 
-http://dockerreact-env.eba-n9m2kmcp.eu-south-1.elasticbeanstalk.com/
+- http://dockerreact-env.eba-n9m2kmcp.eu-south-1.elasticbeanstalk.com/
+- http://dockerreact-env.eba-64j8veny.eu-central-1.elasticbeanstalk.com/
 
 ## Features
 
 - Docker Compose - Dev, Prod
 - Docker File - Dev, Prod
-- CI/CD - Travis CI
+- CI/CD - Travis CI, GitHub Actions
 - AWS - Beanstalk Hosting for Single Container
 - nginX Server for Production
 - Deploy only from master branch
