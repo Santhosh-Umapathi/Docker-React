@@ -13,3 +13,5 @@ Basic React Js Application with Docker
 - Mutiple State Dockerfile
 - Multiple Docker Files
 - Automatic changes from Local to Container (Volumes)
+- nginX Server for Production
+- CI/CD - Travis CI
