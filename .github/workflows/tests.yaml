@@ -1,4 +1,5 @@
-name: Deploy Frontend
+# Run Tests on Branch - Feature
+name: Run Tests
 on:
   push:
     branches:
@@ -9,6 +10,12 @@ jobs:
     steps:
       # Build Image & Run Tests
       - uses: actions/checkout@v2
-      - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t appymango/docker-react -f Dockerfile.dev .
-      - run: docker run -e CI=true appymango/docker-react npm test
+      # Authorize Docker with Access Token
+      - name: Authorize Docker
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      # Build Image
+      - name: Build Image
+        run: docker build -t appymango/docker-react -f Dockerfile.dev .
+      # Run Tests
+      - name: Run Tests
+        run: docker run -e CI=true appymango/docker-react npm test

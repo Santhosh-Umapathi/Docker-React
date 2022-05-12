@@ -1,4 +1,5 @@
-name: Deploy Frontend
+# Test & Deploy: Branch - Master
+name: Deploy Frontend Application
 on:
   push:
     branches:
@@ -8,21 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      ## Authorize Docker with Access Token
+      # Authorize Docker with Access Token
       - name: Authorize Docker
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      ## Build Image
+      # Build Image
       - name: Build Image
         run: docker build -t appymango/docker-react -f Dockerfile.dev .
-      ## Run Tests
+      # Run Tests
       - name: Run Tests
         run: docker run -e CI=true appymango/docker-react npm test
 
-      ## Create Build
+      # Create Build
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
-      ## Deploy Build to AWS Elastic Bean Stalk
+      # Deploy Build to AWS Elastic Bean Stalk
       - name: Deploy to AWS Elastic Bean Stalk
         uses: einaregilsson/beanstalk-deploy@v18
         with:
